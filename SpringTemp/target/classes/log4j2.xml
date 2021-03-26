@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+	<Appenders>
+		<Console name="console_root" target="SYSTEM_OUT">
+			<PatternLayout pattern="%d %5p %m%n" />
+		</Console>
+		<Console name="console_com" target="SYSTEM_OUT">
+			<PatternLayout
+				pattern="%d{dd HH:mm} %5p [%c{-3}] %M-%L %m%n" />
+		</Console>
+		<File name="MyFile" fileName="d:/logs/app.html">
+			<HtmlLayout datePattern="ISO8601" timezone="GMT+9" />
+		</File>
+	</Appenders>
+
+	<Loggers>
+		<Logger name="java.sql" level="debug" additivity="false">
+			<AppenderRef ref="console_com" />
+		</Logger>
+		<Logger name="jdbc.sqltiming" level="INFO" additivity="false">
+			<AppenderRef ref="console_com" />
+		</Logger>
+		<Logger name="com.yedam" level="debug" additivity="false">
+			<AppenderRef ref="console_com" />
+		</Logger>
+		<Logger name="org.springframework" level="bebug"
+			additivity="false">
+			<AppenderRef ref="console_com" />
+		</Logger>
+		<Root level="debug">
+			<AppenderRef ref="console_com" />
+			<!-- <AppenderRef ref="MyFile" /> -->
+		</Root>
+	</Loggers>
+</Configuration>
