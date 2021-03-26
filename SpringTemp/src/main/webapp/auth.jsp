@@ -7,7 +7,7 @@
 <title>auth.jsp</title>
 </head>
 <body>dd   
-
+remote 수정
 <a href="auth">사용자 인증</a>
 <a href="callback?code=">토큰발급</a>
 <a href="userinfo?access_token=___________">사용자정보</a>
